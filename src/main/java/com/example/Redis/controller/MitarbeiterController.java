@@ -19,12 +19,12 @@ public class MitarbeiterController {
     @GetMapping("/createEmployee/{name}/{role}")
     public void createEmployee(@PathVariable String name, @PathVariable String role) {
         MitarbeiterEntity mitarbeiterEntity = new MitarbeiterEntity(UUID.randomUUID().toString(), name, role);
-        mitarbeiterService.save(createHash(name, role), mitarbeiterEntity, 60000);
+        mitarbeiterService.save(mitarbeiterEntity);
     }
 
-    @GetMapping("/getEmployee/{name}/{role}")
-    public MitarbeiterEntity getEmployee(@PathVariable String name, @PathVariable String role) {
-        return mitarbeiterService.get(createHash(name, role));
+    @GetMapping("/getEmployee/{id}")
+    public MitarbeiterEntity getEmployee(@PathVariable String id) {
+        return mitarbeiterService.get(id);
     }
 
     private String createHash(String name, String role) {
