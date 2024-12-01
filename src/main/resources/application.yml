@@ -11,5 +11,3 @@ spring:
       port: 6379
   main:
     banner-mode: off
-
-spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
