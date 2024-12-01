@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
-@RedisHash("mitarbeiter")
+
+@RedisHash(value = "Mitarbeiter", timeToLive = 3600)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
